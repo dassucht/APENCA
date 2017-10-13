@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D874E830-359A-4E2D-8211-81B50656673F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>APENCA</RootNamespace>
+    <AssemblyName>APENCA</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Infragistics2.Shared.v8.3, Version=8.3.20083.1009, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.Misc.v8.3, Version=8.3.20083.1009, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinGrid.v8.3, Version=8.3.20083.1009, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.v8.3, Version=8.3.20083.1009, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Backend\Conexion.cs" />
+    <Compile Include="Backend\DaoCarreras.cs" />
+    <Compile Include="Backend\DaoDetalleEncuesta.cs" />
+    <Compile Include="Backend\DaoElementos.cs" />
+    <Compile Include="Backend\DaoEncuestas.cs" />
+    <Compile Include="Backend\DaoEncuestasRealizadas.cs" />
+    <Compile Include="Backend\DaoSecciones.cs" />
+    <Compile Include="Modelo\PojoDetalleEncuesta.cs" />
+    <Compile Include="Modelo\PojoElemento.cs" />
+    <Compile Include="Modelo\PojoEncuestas.cs" />
+    <Compile Include="Modelo\PojoCarreras.cs" />
+    <Compile Include="Modelo\PojoEncuestasRealizadas.cs" />
+    <Compile Include="Modelo\PojoSecciones.cs" />
+    <Compile Include="Frontend\AgregarEncuesta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\AgregarEncuesta.Designer.cs">
+      <DependentUpon>AgregarEncuesta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\CatEncuestas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\CatEncuestas.Designer.cs">
+      <DependentUpon>CatEncuestas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\CatCarreras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\CatCarreras.Designer.cs">
+      <DependentUpon>CatCarreras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\Consulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\Consulta.Designer.cs">
+      <DependentUpon>Consulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\EditarEncuesta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\EditarEncuesta.Designer.cs">
+      <DependentUpon>EditarEncuesta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\Encuesta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\Encuesta.Designer.cs">
+      <DependentUpon>Encuesta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\ExaminarEncuesta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\ExaminarEncuesta.Designer.cs">
+      <DependentUpon>ExaminarEncuesta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\FormCarrera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\FormCarrera.Designer.cs">
+      <DependentUpon>FormCarrera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\Login2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\Login2.Designer.cs">
+      <DependentUpon>Login2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\Reporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\Reporte.Designer.cs">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\Reporte2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\Reporte2.Designer.cs">
+      <DependentUpon>Reporte2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\ReporteEspecifico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\ReporteEspecifico.Designer.cs">
+      <DependentUpon>ReporteEspecifico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\ReporteGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\ReporteGeneral.Designer.cs">
+      <DependentUpon>ReporteGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Frontend\AgregarEncuesta.resx">
+      <DependentUpon>AgregarEncuesta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\CatEncuestas.resx">
+      <DependentUpon>CatEncuestas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\CatCarreras.resx">
+      <DependentUpon>CatCarreras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\Consulta.resx">
+      <DependentUpon>Consulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\EditarEncuesta.resx">
+      <DependentUpon>EditarEncuesta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\Encuesta.resx">
+      <DependentUpon>Encuesta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\ExaminarEncuesta.resx">
+      <DependentUpon>ExaminarEncuesta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\FormCarrera.resx">
+      <DependentUpon>FormCarrera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\Login2.resx">
+      <DependentUpon>Login2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\Reporte.resx">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\Reporte2.resx">
+      <DependentUpon>Reporte2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\ReporteEspecifico.resx">
+      <DependentUpon>ReporteEspecifico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\ReporteGeneral.resx">
+      <DependentUpon>ReporteGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
